@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pinchZoom="using:PinchZoom"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="PinchZoom.MainPage"
+             x:Name="View">
+
+    <Grid
+        HorizontalOptions="Fill"
+        VerticalOptions="Fill"
+        BindingContext="{Binding Source={x:Reference Name=View}}">
+
+        <pinchZoom:PinchContainer
+            IsClippedToBounds="True"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+
+            <Grid>
+                <Image
+                    Source="xp.jpg"
+                    Aspect="AspectFit"/>
+
+                <toolkit:DrawingView
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    IsMultiLineModeEnabled="True"
+                    ShouldClearOnFinish="False" />
+            </Grid>
+        </pinchZoom:PinchContainer>
+
+    </Grid>
+
+</ContentPage>
